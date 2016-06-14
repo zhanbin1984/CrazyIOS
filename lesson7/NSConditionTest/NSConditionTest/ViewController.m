@@ -30,17 +30,17 @@ FKAccount *account;
 
 -(void)drawDepositAccount:(id)sender
 {
-    NSThread *thread1=[[NSThread alloc] initWithTarget:self selector:@selector(drawMethod:) object:[NSNumber numberWithInt:800]];
+    NSThread *thread1=[[NSThread alloc] initWithTarget:self selector:@selector(depositMethod:) object:[NSNumber numberWithInt:800]];
     thread1.name=@"甲1";
-    NSThread *thread2=[[NSThread alloc] initWithTarget:self selector:@selector(drawMethod:) object:[NSNumber numberWithInt:800]];
+    NSThread *thread2=[[NSThread alloc] initWithTarget:self selector:@selector(depositMethod:) object:[NSNumber numberWithInt:800]];
     thread2.name=@"甲2";
-    NSThread *thread3=[[NSThread alloc] initWithTarget:self selector:@selector(drawMethod:) object:[NSNumber numberWithInt:800]];
+    NSThread *thread3=[[NSThread alloc] initWithTarget:self selector:@selector(depositMethod:) object:[NSNumber numberWithInt:800]];
     thread3.name=@"甲3";
     [thread1 start];
     [thread2 start];
     [thread3 start];
     
-    NSThread *thread4=[[NSThread alloc] initWithTarget:self selector:@selector(depositMethod:) object:[NSNumber numberWithInt:800]];
+    NSThread *thread4=[[NSThread alloc] initWithTarget:self selector:@selector(drawMethod:) object:[NSNumber numberWithInt:800]];
     thread4.name=@"乙";
     [thread4 start];
     
@@ -48,18 +48,16 @@ FKAccount *account;
 
 -(void)drawMethod:(NSNumber *)drawAccount
 {
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<100; i++) {
         [account draw:drawAccount.doubleValue];
-        NSLog(@"drawMethod----%d",i);
     }
     
 }
 
 -(void)depositMethod:(NSNumber *)drawAccount
 {
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<100; i++) {
         [account deposit:drawAccount.doubleValue];
-        NSLog(@"depositMethod----%d",i);
     }
     
 }
