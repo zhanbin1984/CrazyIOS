@@ -35,7 +35,7 @@ dispatch_queue_t concurrentQueue;
 - (IBAction)serial:(id)sender {
     dispatch_async(serialQueue, ^{
         for (int i=0; i<100; i++) {
-             NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(concurrentQueue),i);
+             NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(serialQueue),i);
         }
     });
     
@@ -49,7 +49,7 @@ dispatch_queue_t concurrentQueue;
 - (IBAction)concurrent:(id)sender {
     dispatch_async(concurrentQueue, ^{
         for (int i=0; i<100; i++) {
-            NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(serialQueue),i);
+            NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(concurrentQueue),i);
         }
     });
     
