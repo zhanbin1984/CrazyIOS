@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:NSConditionTest/NSConditionTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NSLockDrawTest/NSLockDrawTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DrawTest/DrawTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PriorityTest/PriorityTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DownImage/DownImage.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ThreadCancel/ThreadCancel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NSThreadTest/NSThreadTest.xcodeproj">
+   </FileRef>
+</Workspace>
