@@ -53,9 +53,7 @@
 -(void)deposit:(CGFloat)depositAccount
 {
     [condition lock];
-    NSLog(@"%@开始存钱",[NSThread currentThread].name);
     if (flag==YES) {
-        NSLog(@"%@开始存钱等待",[NSThread currentThread].name);
         [condition wait];
     }
     else{
