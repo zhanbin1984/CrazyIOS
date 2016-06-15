@@ -13,6 +13,9 @@
 - (IBAction)concurrent:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *iv;
 - (IBAction)downimage:(id)sender;
+- (IBAction)syncSerial:(id)sender;
+- (IBAction)syncConcurrent:(id)sender;
+- (IBAction)dispatchApply:(id)sender;
 
 @end
 
@@ -34,13 +37,13 @@ dispatch_queue_t concurrentQueue;
 
 - (IBAction)serial:(id)sender {
     dispatch_async(serialQueue, ^{
-        for (int i=0; i<100; i++) {
+        for (int i=0; i<1000; i++) {
              NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(serialQueue),i);
         }
     });
     
     dispatch_async(serialQueue, ^{
-        for (int i=0; i<100; i++) {
+        for (int i=0; i<1000; i++) {
             NSLog(@"%@=====%d",[NSThread currentThread],i);
         }
     });
@@ -53,16 +56,6 @@ dispatch_queue_t concurrentQueue;
         }
     });
     
-    dispatch_async(concurrentQueue, ^{
-        for (int i=0; i<100; i++) {
-            NSLog(@"%@=====%d",[NSThread currentThread],i);
-        }
-    });
-    dispatch_async(concurrentQueue, ^{
-        for (int i=0; i<100; i++) {
-            NSLog(@"%@=====%d",[NSThread currentThread],i);
-        }
-    });
     dispatch_async(concurrentQueue, ^{
         for (int i=0; i<100; i++) {
             NSLog(@"%@=====%d",[NSThread currentThread],i);
@@ -85,6 +78,51 @@ dispatch_queue_t concurrentQueue;
             NSLog(@"---下载图片出现错误---");
         }
 
+    });
+}
+
+- (IBAction)syncSerial:(id)sender {
+    
+    //死锁
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        for (int i=0; i<1000; i++) {
+//            NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(serialQueue),i);
+//        }
+//    });
+    //死锁
+    dispatch_async(serialQueue, ^{
+        dispatch_sync(serialQueue, ^{
+            for (int i=0; i<1000; i++) {
+                NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(serialQueue),i);
+            }
+        });
+    });
+    
+    dispatch_sync(serialQueue, ^{
+        for (int i=0; i<1000; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+}
+
+- (IBAction)syncConcurrent:(id)sender {
+    dispatch_sync(concurrentQueue, ^{
+        for (int i=0; i<1000; i++) {
+            NSLog(@"%@=====%s=====%d",[NSThread currentThread],dispatch_queue_get_label(concurrentQueue),i);
+        }
+    });
+    
+    dispatch_sync(concurrentQueue, ^{
+        for (int i=0; i<1000; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+}
+
+- (IBAction)dispatchApply:(id)sender {
+    dispatch_apply(1000, concurrentQueue, ^(size_t time) {
+        NSLog(@"=====执行［%lu］=====%@",time,[NSThread currentThread]);
+        
     });
 }
 

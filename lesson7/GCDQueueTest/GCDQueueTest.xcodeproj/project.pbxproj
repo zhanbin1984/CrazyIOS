@@ -14,6 +14,7 @@
 		4609CC1A1D10647D000FCEEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4609CC191D10647D000FCEEB /* Images.xcassets */; };
 		4609CC1D1D10647D000FCEEB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4609CC1B1D10647D000FCEEB /* LaunchScreen.xib */; };
 		4609CC291D10647D000FCEEB /* GCDQueueTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4609CC281D10647D000FCEEB /* GCDQueueTestTests.m */; };
+		6D10A5161D116596009814A6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D10A5151D116596009814A6 /* View.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4609CC221D10647D000FCEEB /* GCDQueueTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDQueueTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4609CC271D10647D000FCEEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4609CC281D10647D000FCEEB /* GCDQueueTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDQueueTestTests.m; sourceTree = "<group>"; };
+		6D10A5151D116596009814A6 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				4609CC191D10647D000FCEEB /* Images.xcassets */,
 				4609CC1B1D10647D000FCEEB /* LaunchScreen.xib */,
 				4609CC0C1D10647D000FCEEB /* Supporting Files */,
+				6D10A5151D116596009814A6 /* View.xib */,
 			);
 			path = GCDQueueTest;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D10A5161D116596009814A6 /* View.xib in Resources */,
 				4609CC181D10647D000FCEEB /* Main.storyboard in Resources */,
 				4609CC1D1D10647D000FCEEB /* LaunchScreen.xib in Resources */,
 				4609CC1A1D10647D000FCEEB /* Images.xcassets in Resources */,
@@ -416,6 +420,7 @@
 				4609CC2E1D10647D000FCEEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4609CC2F1D10647D000FCEEB /* Build configuration list for PBXNativeTarget "GCDQueueTestTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				4609CC311D10647D000FCEEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
