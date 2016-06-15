@@ -10,6 +10,7 @@
 #import "FKAccount.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *drawBtn;
 
 @end
@@ -45,5 +46,6 @@ FKAccount *account;
 {
     [account draw:drawAccount.doubleValue];
 }
+
 
 @end

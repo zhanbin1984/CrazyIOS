@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="GCDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgC-Mn-hS1">
+                                <rect key="frame" x="270" y="30" width="60" height="30"/>
+                                <state key="normal" title="串行队列">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="serial:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TnS-1a-75b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ege-jS-PHc">
+                                <rect key="frame" x="270" y="68" width="60" height="30"/>
+                                <state key="normal" title="并发队列">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="concurrent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9FC-1E-EJU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmn-uL-vGV">
+                                <rect key="frame" x="28" y="120" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Eob-ae-TM9"/>
+                                    <constraint firstAttribute="height" constant="128" id="HeR-qS-7OX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZK-rb-bPm">
+                                <rect key="frame" x="276" y="169" width="60" height="30"/>
+                                <state key="normal" title="下载图片">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downimage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="okw-XP-3WH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du4-6r-p4T">
+                                <rect key="frame" x="35" y="277" width="120" height="30"/>
+                                <state key="normal" title="同步提交串行队列"/>
+                                <connections>
+                                    <action selector="syncSerial:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AWx-OY-LYp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-iN-3YM">
+                                <rect key="frame" x="35" y="322" width="120" height="30"/>
+                                <state key="normal" title="同步提交并发队列"/>
+                                <connections>
+                                    <action selector="syncConcurrent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B8K-Sp-AOr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-zZ-Xzx">
+                                <rect key="frame" x="35" y="371" width="127" height="30"/>
+                                <state key="normal" title="dispatch_apply"/>
+                                <connections>
+                                    <action selector="dispatchApply:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="99o-7g-wo4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-Kf-nHC">
+                                <rect key="frame" x="35" y="409" width="127" height="30"/>
+                                <state key="normal" title="dispatch_group">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dispatch_group:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J4a-R2-nFI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47q-yg-3wZ">
+                                <rect key="frame" x="45" y="447" width="116" height="30"/>
+                                <state key="normal" title="dispatch_group2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dispatch_group2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kp7-GO-g2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHL-pv-Kyj">
+                                <rect key="frame" x="200" y="277" width="90" height="30"/>
+                                <state key="normal" title="单次执行任务">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="diapatch_once:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Mkx-nQ-D4j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ege-jS-PHc" secondAttribute="centerX" id="4Ug-YN-Tl9"/>
+                            <constraint firstAttribute="centerX" secondItem="VgC-Mn-hS1" secondAttribute="centerX" id="88K-ba-YAh"/>
+                            <constraint firstItem="Ege-jS-PHc" firstAttribute="top" secondItem="VgC-Mn-hS1" secondAttribute="bottom" constant="10" id="aCL-Lj-iob"/>
+                            <constraint firstItem="xmn-uL-vGV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="iYz-k7-cY5"/>
+                            <constraint firstItem="VgC-Mn-hS1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="kM1-iP-xB9"/>
+                            <constraint firstItem="xmn-uL-vGV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="12" id="vlF-Aw-UOV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv" destination="xmn-uL-vGV" id="7OA-mZ-J6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="258"/>
+        </scene>
+    </scenes>
+</document>
