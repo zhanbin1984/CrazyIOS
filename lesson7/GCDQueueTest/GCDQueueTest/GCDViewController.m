@@ -16,6 +16,9 @@
 - (IBAction)syncSerial:(id)sender;
 - (IBAction)syncConcurrent:(id)sender;
 - (IBAction)dispatchApply:(id)sender;
+- (IBAction)dispatch_group:(id)sender;
+- (IBAction)dispatch_group2:(id)sender;
+- (IBAction)diapatch_once:(id)sender;
 
 @end
 
@@ -123,6 +126,72 @@ dispatch_queue_t concurrentQueue;
     dispatch_apply(1000, concurrentQueue, ^(size_t time) {
         NSLog(@"=====执行［%lu］=====%@",time,[NSThread currentThread]);
         
+    });
+    NSLog(@"=====执行完成====%@",[NSThread currentThread]);
+}
+
+- (IBAction)dispatch_group:(id)sender {
+    dispatch_group_t group=dispatch_group_create();
+    dispatch_group_async(group, concurrentQueue, ^{
+        for (int i=0; i<500; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+    dispatch_group_async(group, concurrentQueue, ^{
+        for (int i=0; i<500; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+    dispatch_group_async(group, concurrentQueue, ^{
+        for (int i=0; i<500; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+    dispatch_group_async(group, concurrentQueue, ^{
+        for (int i=0; i<500; i++) {
+            NSLog(@"%@=====%d",[NSThread currentThread],i);
+        }
+    });
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"执行完成");
+    });
+}
+
+- (IBAction)dispatch_group2:(id)sender {
+    dispatch_group_t group=dispatch_group_create();
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_group_enter(group);
+        // 任务代码1 假定任务 是异步执行block回调
+        dispatch_async(concurrentQueue, ^{
+            for (int i=0; i<500; i++) {
+                NSLog(@"%@=====%d",[NSThread currentThread],i);
+            }
+            dispatch_group_leave(group);
+        });
+        
+        dispatch_group_enter(group);
+        // 任务代码2 假定任务 是异步执行block回调
+        dispatch_async(concurrentQueue, ^{
+            for (int i=0; i<500; i++) {
+                NSLog(@"%@=====%d",[NSThread currentThread],i);
+            }
+            dispatch_group_leave(group);
+        });
+        
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 主线程处理
+            NSLog(@"执行完成");
+        });
+    });
+    
+}
+
+- (IBAction)diapatch_once:(id)sender {
+    static dispatch_once_t once=0;
+    dispatch_once(&once, ^{
+        NSLog(@"单次执行任务");
+        [NSThread sleepForTimeInterval:4];
     });
 }
 
