@@ -190,7 +190,7 @@ dispatch_queue_t concurrentQueue;
 - (IBAction)diapatch_once:(id)sender {
     static dispatch_once_t once=0;
     dispatch_once(&once, ^{
-        NSLog(@"单次执行任务");
+        NSLog(@"单次执行任务aaa");
         [NSThread sleepForTimeInterval:4];
     });
 }
