@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DrawImageInMemory/DrawImageInMemory.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GeometryShape/GeometryShape.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIImageTest/UIImageTest.xcodeproj">
+   </FileRef>
+</Workspace>
