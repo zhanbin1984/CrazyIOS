@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73EFB01A-C7AB-4B2A-8208-5028D80C7FEE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>lesson12</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7C947F9241B669FB8DC8733C1EC080E92CD8F233</key>
+		<string>https://github.com/zhanbin1984/CrazyIOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>lesson12/lesson12.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7C947F9241B669FB8DC8733C1EC080E92CD8F233</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhanbin1984/CrazyIOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7C947F9241B669FB8DC8733C1EC080E92CD8F233</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7C947F9241B669FB8DC8733C1EC080E92CD8F233</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CrazyIOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

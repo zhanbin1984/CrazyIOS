@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CALayerTest/CALayerTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TransformTest/TransformTest.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DrawImageInMemory/DrawImageInMemory.xcodeproj">
    </FileRef>
    <FileRef
